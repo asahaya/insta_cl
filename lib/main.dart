@@ -4,7 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:insta_cl/di/poviders.dart';
 import 'package:insta_cl/style.dart';
 import 'package:insta_cl/view/home_screen.dart';
-import 'package:insta_cl/view/login/screens/login_screen.dart';
+import 'package:insta_cl/view/login/screens/page/login_screen.dart';
 import 'package:insta_cl/view_models/login_view_model.dart';
 import 'package:provider/provider.dart';
 
