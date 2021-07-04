@@ -11,7 +11,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text(S.of(context).appTitle),
+        child: Text(S.of(context).profile),
       ),
     );
   }

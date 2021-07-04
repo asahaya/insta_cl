@@ -6,30 +6,31 @@ import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
 
-List<SingleChildWidget> globalProviders=[
+List<SingleChildWidget> globalProviders = [
   ...independentModels,
   ...dependentModels,
-  ...viewModels,
-
+  ...viewModels
 ];
 
 
-List<SingleChildWidget> independentModels =[
+List<SingleChildWidget> independentModels = [
   Provider<DatabaseManager>(
-    create: (_)=>DatabaseManager(),
-  )
+    create: (_) => DatabaseManager(),
+  ),
 ];
 
-List<SingleChildWidget> dependentModels =[
-  ProxyProvider<DatabaseManager,UserRepository>(
+
+List<SingleChildWidget> dependentModels = [
+  ProxyProvider<DatabaseManager, UserRepository>(
     update: (_,dbManager,repo)=>UserRepository(dbManeger: dbManager),
 
-  )
+  ),
 ];
 
 List<SingleChildWidget> viewModels =[
-  ChangeNotifierProvider(
-      create: (context)=>LoginViewModel(
-          userRepository: Provider.of<UserRepository>(context,listen: false)),
+  ChangeNotifierProvider<LoginViewModel>(
+    create: (context) => LoginViewModel(
+        userRepository: Provider.of<UserRepository>(context, listen: false)
+    ),
   ),
 ];
